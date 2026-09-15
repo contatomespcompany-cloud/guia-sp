@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meus lugares em São Paulo</title>
+<meta name="description" content="45 lugares de São Paulo que eu realmente fui — cafés, bares, restaurantes e rolê cultural.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FFFEFB; --card:#FFFFFF;
+    --butter:#F7D978; --butter-soft:#FCF1CE;
+    --sky:#A9D3E5; --sky-soft:#E9F4F8;
+    --sea:#3E7C93; --ink:#26384A; --ink-soft:#64768A; --line:#D8E6EA;
+    --display:"Caveat","Segoe Script",cursive;
+    --body:"Nunito","Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono","SF Mono",monospace;
+    --lift:0 2px 4px rgba(38,56,74,.04), 0 12px 28px -12px rgba(38,56,74,.14);
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--body); line-height:1.6; }
+  .wrap{ max-width:720px; margin:0 auto; padding:0 20px 70px; }
+
+  header.capa{ text-align:center; padding:52px 0 26px; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--mono); font-size:12px; font-weight:600;
+    letter-spacing:.1em; text-transform:uppercase; color:var(--sea);
+    background:var(--sky-soft); border:1px solid var(--line);
+    border-radius:999px; padding:6px 16px;
+  }
+  h1{
+    font-family:var(--display); font-weight:700;
+    font-size:clamp(44px,10vw,78px); line-height:.95;
+    margin:16px 0 6px; text-wrap:balance;
+  }
+  .sub{ color:var(--ink-soft); max-width:46ch; margin:6px auto 0; font-size:clamp(15px,2.4vw,17px); }
+
+  .nota-fonte{
+    display:inline-block; margin-top:22px; padding:10px 16px;
+    background:var(--butter-soft); border:1px dashed #E3C877; border-radius:10px;
+    font-family:var(--mono); font-size:12.5px; color:var(--ink-soft);
+    max-width:52ch; text-align:left; line-height:1.55;
+  }
+
+  nav.atalhos{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:30px 0 8px; }
+  nav.atalhos a{
+    font-family:var(--mono); font-size:12.5px; font-weight:600;
+    text-decoration:none; color:var(--sea);
+    background:var(--card); border:1px solid var(--line);
+    border-radius:999px; padding:9px 16px;
+    transition:background .16s ease, transform .16s ease;
+  }
+  nav.atalhos a:hover{ background:var(--sky-soft); transform:translateY(-1px); }
+  nav.atalhos a:focus-visible{ outline:2px solid var(--sea); outline-offset:3px; }
+
+  .grupo{ margin-top:44px; }
+  .grupo-cab{ display:flex; align-items:center; gap:12px; padding-bottom:12px; border-bottom:2px solid var(--line); }
+  .grupo-cab .emo{ font-size:22px; }
+  .grupo-cab h2{ font-family:var(--display); font-size:clamp(30px,6vw,40px); margin:0; flex:1; }
+  .grupo-cab .qtd{
+    font-family:var(--mono); font-size:12px; font-weight:600;
+    color:var(--sea); background:var(--sky-soft);
+    border-radius:999px; padding:5px 12px;
+  }
+
+  ul.lugares{ list-style:none; margin:0; padding:0; display:grid; gap:12px; margin-top:18px; }
+  .lugar{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:16px 18px; box-shadow:var(--lift);
+  }
+  .lugar-top{ display:flex; align-items:baseline; gap:12px; }
+  .lugar h3{ font-size:17px; font-weight:700; margin:0; flex:1; text-wrap:balance; }
+  .nota{
+    font-family:var(--mono); font-size:12.5px; font-weight:600;
+    color:var(--sea); background:var(--sky-soft);
+    border-radius:7px; padding:4px 9px; white-space:nowrap;
+    font-variant-numeric:tabular-nums;
+  }
+  .nota::after{ content:" \2605"; }
+  .obs{ margin:9px 0 0; font-size:15px; line-height:1.55; color:var(--ink-soft); }
+
+  footer.fim{ margin-top:56px; text-align:center; }
+  footer.fim p{ font-family:var(--display); font-size:26px; margin:0 0 4px; }
+  footer.fim span{ display:block; font-family:var(--mono); font-size:12.5px; color:var(--ink-soft); }
+  .redes{ display:flex; justify-content:center; gap:10px; margin-top:20px; flex-wrap:wrap; }
+  .redes a{
+    font-family:var(--mono); font-size:13px; font-weight:600; text-decoration:none;
+    color:var(--sea); background:var(--card); border:1px solid var(--line);
+    border-radius:999px; padding:11px 20px;
+  }
+  .redes a:hover{ background:var(--sky-soft); }
+  @media (prefers-reduced-motion:reduce){ *{ transition:none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="capa">
+    <span class="eyebrow">Curadoria · São Paulo</span>
+    <h1>Meus lugares<br>em São Paulo</h1>
+    <p class="sub">45 endereços que eu realmente fui — café, brunch, jantar, bar e rolê cultural.</p>
+    <p class="nota-fonte">
+      A nota ao lado de cada lugar é a do Google, para você ter referência.
+      O que está escrito embaixo é o que <strong>eu</strong> achei — e o que vale pedir.
+    </p>
+    <nav class="atalhos">
+        <a href="#cafes">☕ Cafés</a>
+        <a href="#brunch">🥐 Padarias & brunch</a>
+        <a href="#restaurantes">🍽 Restaurantes</a>
+        <a href="#bares">🍸 Bares</a>
+        <a href="#cultura">🎨 Cultura</a>
+    </nav>
+  </header>
+
+    <section class="grupo" id="cafes">
+      <div class="grupo-cab"><span class="emo">☕</span><h2>Cafés</h2><span class="qtd">12</span></div>
+      <ul class="lugares">
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Kooi Mooa</h3>
+            <span class="nota">4,9</span>
+          </div>
+          <p class="obs">Cafe coreano</p>
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>It&#x27;s Café Franco da Rocha</h3>
+            <span class="nota">4,7</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>The Coffee - Sumaré</h3>
+            <span class="nota">4,7</span>
+          </div>
+          <p class="obs">Cafe</p>
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Gato Pingado Cat Cafe</h3>
+            <span class="nota">4,6</span>
+          </div>
+          <p class="obs">Pão na chapa delicioso e seleção de cafés espetacular. amei que tudo é super temático.</p>
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Café das Coisinhas</h3>
+            <span class="nota">4,6</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Café Cultura</h3>
+            <span class="nota">4,5</span>
+          </div>
+          <p class="obs">Experimentar Cold Coffee Ginger e Cold Navelã</p>
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Astronauta Café</h3>
+            <span class="nota">4,5</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>HM Food Café - Pinheiros</h3>
+            <span class="nota">4,5</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Coffee Lab</h3>
+            <span class="nota">4,5</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Sterna Café</h3>
+            <span class="nota">4,2</span>
+          </div>
+          <p class="obs">café com especiarias e doce de leite superou minhas expectativas, panini feito na hora é espetacular</p>
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Dois Trópicos</h3>
+            <span class="nota">4,1</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Café Pace</h3>
+            <span class="nota">4,0</span>
+          </div>
+          
+        </li>
+      </ul>
+    </section>
+
+    <section class="grupo" id="brunch">
+      <div class="grupo-cab"><span class="emo">🥐</span><h2>Padarias & brunch</h2><span class="qtd">8</span></div>
+      <ul class="lugares">
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Bromélia Bakery</h3>
+            <span class="nota">4,6</span>
+          </div>
+          <p class="obs">COMBO BRUNCH NO PREÇO</p>
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Le Blé - Casa de Pães</h3>
+            <span class="nota">4,6</span>
+          </div>
+          <p class="obs">Brunch</p>
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Mug.SP</h3>
+            <span class="nota">4,5</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Botanikafé Jardins</h3>
+            <span class="nota">4,5</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Z Deli Restaurante &amp; Delicatessen</h3>
+            <span class="nota">4,4</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Motchimu</h3>
+            <span class="nota">4,4</span>
+          </div>
+          <p class="obs">Matcha</p>
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Le Jazz Boulangerie</h3>
+            <span class="nota">4,3</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>MAG Market</h3>
+            <span class="nota">4,2</span>
+          </div>
+          
+        </li>
+      </ul>
+    </section>
+
+    <section class="grupo" id="restaurantes">
+      <div class="grupo-cab"><span class="emo">🍽</span><h2>Restaurantes</h2><span class="qtd">7</span></div>
+      <ul class="lugares">
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Terraço Jardins</h3>
+            <span class="nota">4,7</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Oli Pane</h3>
+            <span class="nota">4,6</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Komah Restaurante</h3>
+            <span class="nota">4,6</span>
+          </div>
+          <p class="obs">Comer Kimchi</p>
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Bosco Restaurante</h3>
+            <span class="nota">4,5</span>
+          </div>
+          <p class="obs">BURRATA COM MEL!!!!!</p>
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Cora Restaurante</h3>
+            <span class="nota">4,3</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>AK Deli</h3>
+            <span class="nota">4,3</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Boteco Central</h3>
+            <span class="nota">4,3</span>
+          </div>
+          
+        </li>
+      </ul>
+    </section>
+
+    <section class="grupo" id="bares">
+      <div class="grupo-cab"><span class="emo">🍸</span><h2>Bares</h2><span class="qtd">7</span></div>
+      <ul class="lugares">
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Kotchi Bar</h3>
+            <span class="nota">4,7</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Varal Bar</h3>
+            <span class="nota">4,4</span>
+          </div>
+          <p class="obs">Bar</p>
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Must Bar</h3>
+            <span class="nota">4,3</span>
+          </div>
+          <p class="obs">💸Caro, porem alta gastronomia, indico ir para um jantar romântico ou fim de tarde.</p>
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Arlete Bar e Mercearia</h3>
+            <span class="nota">4,3</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Dōmo</h3>
+            <span class="nota">4,0</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Matiz</h3>
+            <span class="nota">3,8</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Oh la la</h3>
+            <span class="nota">3,4</span>
+          </div>
+          
+        </li>
+      </ul>
+    </section>
+
+    <section class="grupo" id="cultura">
+      <div class="grupo-cab"><span class="emo">🎨</span><h2>Cultura</h2><span class="qtd">11</span></div>
+      <ul class="lugares">
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Livraria Ponta de Lança</h3>
+            <span class="nota">4,9</span>
+          </div>
+          <p class="obs">Takkø Café - Vila Buarque</p>
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Museu de Zoologia da Universidade de São Paulo</h3>
+            <span class="nota">4,8</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Casa Museu Ema Klabin</h3>
+            <span class="nota">4,8</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Museu das Favelas</h3>
+            <span class="nota">4,8</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>GALERIA ALMA DA RUA</h3>
+            <span class="nota">4,8</span>
+          </div>
+          <p class="obs">Galeria de arte</p>
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Centro Cultural São Paulo</h3>
+            <span class="nota">4,7</span>
+          </div>
+          <p class="obs">Spfoofilmfest</p>
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Sebo Pura Poesia</h3>
+            <span class="nota">4,7</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Museu de Arte Contemporânea da Universidade de São Paulo</h3>
+            <span class="nota">4,7</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Museu da Imagem e do Som (MIS) - São Paulo</h3>
+            <span class="nota">4,7</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Pivô Arte e Pesquisa</h3>
+            <span class="nota">4,6</span>
+          </div>
+          
+        </li>
+        <li class="lugar">
+          <div class="lugar-top">
+            <h3>Bibla Livraria e Cafeteria</h3>
+            <span class="nota">4,5</span>
+          </div>
+          
+        </li>
+      </ul>
+    </section>
+
+  <footer class="fim">
+    <p>Bom rolê! 💙</p>
+    <span>lista viva — eu atualizo conforme vou conhecendo</span>
+    <div class="redes">
+      <a href="https://instagram.com/salkys_">@salkys_</a>
+      <a href="https://tiktok.com/@salkys_sz">@salkys_sz</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
